@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome Clue</title>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  #clueMessage {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    max-width: 90vw;
+  }
+  #clueBtn {
+    font-size: 22px;
+    padding: 18px 45px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+  #clueBtn:active {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div id="clueMessage">WELCOME TEAM BROCODE — THIS IS YOUR FIRST CLUE</div>
+<button id="clueBtn">Go To Clue</button>
+
+<script>
+  document.getElementById('clueBtn').addEventListener('click', () => {
+    window.location.href = 'CLUE_2.html';
+  });
+</script>
+
+</body>
+</html>

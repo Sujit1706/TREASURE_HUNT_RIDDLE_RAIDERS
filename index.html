@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome Video</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      height: 100%;
+      background: black;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #welcomeText {
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    video {
+      width: 90vw;
+      max-width: 480px;
+      height: auto;
+      border-radius: 10px;
+      display: none;
+    }
+
+    #playBtn {
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="welcomeText">WELCOME TEAMS</div>
+
+  <video id="welcomeVideo" playsinline>
+    <source src="TREASURE_HUNT.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <button id="playBtn">PLAY VIDEO WITH SOUND</button>
+
+  <script>
+    const playBtn = document.getElementById('playBtn');
+    const video = document.getElementById('welcomeVideo');
+    const welcomeText = document.getElementById('welcomeText');
+
+    playBtn.addEventListener('click', () => {
+      playBtn.style.display = 'none';
+      welcomeText.style.display = 'none';
+      video.style.display = 'block';
+      video.muted = false;
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      window.location.href = 'welcome_clue.html'; // Go to clue welcome page
+    });
+  </script>
+
+</body>
+</html>
